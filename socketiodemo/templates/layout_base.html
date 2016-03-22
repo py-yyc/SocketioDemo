@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ product_name }}</title>
+
+    <!-- Use Bootstrap for a nicer UI -->
+    <link rel="stylesheet" href="/static/vendor/css/bootstrap-3.3.6/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/vendor/css/bootstrap-3.3.6/bootstrap-theme.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{ product_name }}</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li {% if path in ("/", "/echo") %}class="active"{% endif %}>
+                <a href="/">Echo</a>
+            </li>
+            <li {% if path == "/rooms" %}class="active"{% endif %}>
+                <a href="/rooms">Rooms</a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+        {% block body %}
+            <div class="text-center">
+                <h2>Excuse me, Sir/Madam, but I think you're missing some content.</h2>
+            </div>
+        {% endblock %}
+    </div><!-- /.container -->
+
+    <!-- Load jQuery for easy DOM selectors (and Bootstrap requires it) -->
+    <script type="text/javascript" src="/static/vendor/js/jquery-1.12.2/jquery-1.12.2.min.js"></script>
+
+    <!-- Load Bootstrap for that Startup feel -->
+    <script type="text/javascript" src="/static/vendor/js/bootstrap-3.3.6/bootstrap.min.js"></script>
+
+    <!-- Load Socket.io to keep it real -->
+    <script type="text/javascript" src="/static/vendor/js/socket.io-1.4.5/socket.io.min.js"></script>
+
+    {% block scripts %}
+        <!-- No additional JS -->
+    {% endblock %}
+</body>
+</html>

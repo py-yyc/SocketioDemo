@@ -1,0 +1,9 @@
+Flask
+Flask-Script
+Flask-SocketIO
+blinker
+itsdangerous
+gevent
+gevent-websocket
+wsaccel
+ujson

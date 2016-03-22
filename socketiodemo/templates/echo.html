@@ -1,0 +1,26 @@
+{% extends "layout_twin.html" %}
+
+{% block left %}
+    <form id="emit" class="form-inline" method="POST" action='#'>
+        <div class="form-group">
+            <input class="form-control" type="text" name="emit_data" id="emit_data" placeholder="Message">
+        </div>
+        <button class="btn btn-primary" type="submit">Echo</button>
+    </form>
+    <br />
+    <form id="broadcast" class="form-inline" method="POST" action='#'>
+        <div class="form-group">
+            <input class="form-control" type="text" name="broadcast_data" id="broadcast_data" placeholder="Message">
+        </div>
+        <button class="btn btn-primary" type="submit">Broadcast</button>
+    </form>
+{% endblock %}
+
+{% block right %}
+    <div id="log" class="well"></div>
+{% endblock %}
+
+{% block scripts %}
+  <!-- Load our code so we can chat! -->
+  <script type="text/javascript" src="/static/js/echo.js"></script>
+{% endblock %}

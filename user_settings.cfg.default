@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+USER SETTINGS (DEFAULT)
+
+Examples of some of the settings that can be customized for deployment.
+
+Copy to 'user_settings.cfg' in the same directory as 'manage.py' to customize
+"""
+
+# PORT = 5000
+# DEBUG = True
